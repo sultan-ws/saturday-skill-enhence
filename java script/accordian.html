@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.faqItem{
+			
+			font-size: 18px;
+			background: skyblue;
+			border: 1px solid black;
+		}
+		.faqQuest{
+			border: 1px solid black;
+			padding: 10px;
+		}
+		.faqAns{
+			padding: 15px;
+			display: none;
+		}
+		.ans{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="accordian">
+		<div class="faqItem">
+			<div class="faqQuest">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing </h2>
+			</div>
+			<div class="faqAns">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+		<div class="faqItem">
+			<div class="faqQuest">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing </h2>
+			</div>
+			<div class="faqAns">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+		<div class="faqItem">
+			<div class="faqQuest">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing </h2>
+			</div>
+			<div class="faqAns">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+		<div class="faqItem">
+			<div class="faqQuest">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing </h2>
+			</div>
+			<div class="faqAns">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+		<div class="faqItem">
+			<div class="faqQuest">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing </h2>
+			</div>
+			<div class="faqAns">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	let quests = document.querySelectorAll('.faqQuest');
+	
+	quests.forEach((item)=>{
+		item.addEventListener('click',()=>{
+			let anses = item.nextElementSibling;
+			
+			let ansAll = document.querySelectorAll('.faqAns');
+			ansAll.forEach((el)=>{
+				if(anses != el){
+					el.classList.remove('ans');
+				}
+			});
+
+			anses.classList.toggle('ans');
+		});
+	});
+</script>
+</html>

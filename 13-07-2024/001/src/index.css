@@ -1,0 +1,44 @@
+input, button{
+  width: 500px;
+  padding: 8px;
+  display: block;
+  margin: auto;
+}
+.modal{
+  width: 800px;
+  height: 600px;
+  background-color: red;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+}
+
+.accord{
+  width: 800px;
+  margin: auto;
+  border: 1px solid;
+  background-color: azure;
+}
+
+.accord h1{
+  text-align: center;
+  padding: 8px;
+}
+
+.faq-quest{
+  padding: 8px;
+  border-bottom: 1px solid grey;
+  background-color: aqua;
+}
+
+.faq-ans{
+  padding: 8px;
+  background-color: skyblue;
+  border-bottom: 1px solid;
+  display: none;
+}
+
+.active-ans{
+  display: block !important;
+}

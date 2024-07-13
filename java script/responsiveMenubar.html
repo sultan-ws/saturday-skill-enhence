@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		.header{
+			box-shadow: 0px 0px 10px 2px black;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			position: relative;
+		}
+		.logo{
+			width: 200px;
+		}
+		.logo img{
+			width: 100%;
+		}
+		.manu ul{
+			display: flex;
+		}
+		.manu ul li{
+			padding: 0 10px;
+			font-size: 25px;
+		}
+		.menuBtn{
+			font-size: 40px;
+			font-weight: bold;
+			display: none;
+		}
+		.manu ul span{
+			font-size: 80px;
+			font-weight: bold;
+			color: white;
+			position: absolute;
+			right: 0;
+			padding-right: 20px;
+		}
+
+		@media only screen and (max-width : 992px){
+			.menuBtn{
+				display: inline-block;
+			}
+			.manu{
+				position: absolute;
+				top: 180px;
+				left: -120%;
+				background: #00000085;
+				width: 80%;
+				transition: 0.8s;
+			}
+			.manu ul{
+				flex-direction: column;
+
+			}
+			.manu ul li{
+				padding: 20px;
+				border-bottom: 2px solid white;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			<img src="images/butterflies-1127666_640.jpg">
+		</div>
+		<div class="manu">
+			<ul>
+				<span>&times;</span>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Home</a>
+				</li>
+			</ul>
+		</div>
+		<div class="menuBtn">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	let menuBtn = document.querySelector('.menuBtn');
+	let manu = document.querySelector('.manu');
+	let closeBtn = document.querySelector('.manu ul span');
+
+	menuBtn.addEventListener('click',()=>{
+		manu.style.left = '0';
+	});
+
+	closeBtn.addEventListener('click',()=>{
+		manu.style.left = '-120%';
+	})
+</script>
+</html>

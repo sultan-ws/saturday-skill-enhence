@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 200px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="main" id="main1"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+	// $('#main1').mouseleave(function(){
+	// 	$('#main1').css('background-color','yellow')
+	// });
+
+	$('#main1').on({click : function(){
+		$('#main1').css('background-color','yellow')
+		},
+		mouseenter : function(){
+			$('#main1').css('background-color','skyblue')
+		},
+		mouseleave : function(){
+			$('#main1').css('background-color','cyan')
+		}
+})
+	
+</script>
+</html>
+
+Jquery
+		1) selectors
+				$('selector');
+
+		2) events
+				A)click
+				B)dblclick
+				C)mouseenter
+				D)mouseleave
+				E)hover
+		3)on()
+
+		4) effects
+			A) hide()
+			B) slideUp()
+			C) fadeOut()
+			D) show()
+			E) slideDown()
+			F) fadeIn()
+			G) slideToggle()
+			H) fadeTogggle
+			I) toggle()
+
+		5) class
+			A)addClass()
+			B)removeClass()
+			C)toggleClass()
+
+		6) content
+			1)val();
+			2)html();
+			3)text()
+			4) attr()
+
+		7)Add Content
+			A) append()
+			B) prepend()
+			C) before()
+			D) After()
+
+
+		8) Remove Content
+			A) remove()
+			B) empty()
+
+		9) CSS
+			A) css()
+
+		10) Traversing
+			A) parent() (direct parent)
+			B) parents() (all parents)
+			C) parentsUntil()
+			D) childern()
+			E) find()
+			F) siblings()
+			G) next()
+			H) nextAll()
+			I) nextUntil()
+			J) prev()
+			K) prevAll()
+			L) prevUntil()

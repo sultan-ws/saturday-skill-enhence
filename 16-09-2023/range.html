@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div>
+		<input oninput="rangeSelect()" type="range" min="10" max="1000" name="" id="userInput"><span id="valueSpan">00</span>
+	</div>
+</body>
+<script type="text/javascript">
+	let inputUser = document.getElementById('userInput');
+	const rangeSelect = ()=>{
+		let inputValue = inputUser.value;
+		let valueSpan = document.getElementById('valueSpan');
+
+		valueSpan.innerHTML = inputValue;
+
+	};
+	inputUser.addEventListener('change',()=>{
+
+		console.log(inputUser.value);
+	});
+</script>
+</html>

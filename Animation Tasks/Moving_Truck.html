@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Moving Truck </title>
+	<style type="text/css">
+		
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		main {
+			width: 100%;
+			height: 100vh;
+			border: 0.1px solid red;
+		}
+
+		.truck {
+			position: fixed;
+			top: 110px;
+			animation: Truck_Run 10s infinite forwards linear;
+			left: -10%;
+		}
+
+		
+		.wheels {
+			display: flex;
+			gap: 20px;
+			justify-content: space-around;
+			
+		}
+
+		.wheels span img {
+			animation: wheels_rotate 1s infinite linear;
+		}
+
+		@keyframes wheels_rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes Truck_Run {
+			0% {
+				left: 0%;
+				transform: rotate(0deg);
+			}
+			50% {
+				left: 90%;
+				transform: rotate(0deg);
+			}
+			51% {
+				left: 90%;
+				transform: rotateY(180deg);
+			}
+			99% {
+				left: 0%;
+				transform: rotateY(180deg);
+			}
+			100% {
+				left: 0%;
+				transform: rotateY(180deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<main>
+		<div class="truck">
+			<div class="truck_body">
+				<img src="https://packshifts.in/images/truck-1.png">
+			</div>
+			<div class="wheels">
+				<span>
+					<img src="https://packshifts.in/images/wheel-2.png">
+				</span>
+				<span>
+					<img src="https://packshifts.in/images/wheel-2.png">
+				</span>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

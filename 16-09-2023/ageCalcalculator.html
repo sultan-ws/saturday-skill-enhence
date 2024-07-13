@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="date" name="" id="userDate">
+	<input type="time" name="" id="userTime"><br>
+	<label>Years :</label>
+	<input type="text" name="" id="year"><br>
+	<label>Months :</label>
+	<input type="text" name="" id="month"><br>
+	<label>Days :</label>
+	<input type="text" name="" id="day"><br>
+	<button onclick="calcAge()">calc age</button>
+</body>
+<script type="text/javascript">
+	const calcAge = ()=>{
+		let now = new Date();
+		let userDate = document.querySelector('#userDate').value;
+		let userTime = document.querySelector('#userTime').value;
+		let year = document.querySelector('#year');
+		let month = document.querySelector('#month');
+		let day = document.querySelector('#day');
+
+		let userDateZone = new Date(userDate + ' ' +userTime);
+		let dateDifference = now - userDateZone;
+
+		let years = Math.floor(dateDifference / (1000*60*60*24*365.25));
+		let months = Math.floor((dateDifference % (1000*60*60*24*365.25)) / (1000*60*60*24*30));
+		let days = Math.floor((dateDifference % (1000*60*60*24*30)) / (1000*60*60*24));
+
+		year.value = years;
+		month.value = months;
+		day.value = days;
+		
+	};
+</script>
+</html>
+
+<!-- now.getHours();
+	now.getMinutes()
+	now.getSeconds();
+	now.getMilliseconds();
+	now.getFullYear();
+	now.getMonth();
+	now.getDay();
+	let c = now.toDateString();
+	let a = now.getDate();
+	let b = now.getTime(); -->

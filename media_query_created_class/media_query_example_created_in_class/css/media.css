@@ -1,0 +1,44 @@
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+	main {
+		width: 80%;
+		background-color: red;
+		color: white;
+		font-size: 30px;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 765px) {
+		main {
+			width: 80%;
+			background-color: blue;
+			color: red;
+			font-size: 40px;
+		}
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+		main {
+			width: 80%;
+			background-color: green;
+			color: blue;
+			font-size: 60px;
+		}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+		main {
+			width: 80%;
+			background-color: orange;
+			color: green;
+			font-size: 60px;
+		}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+		main {
+			width: 80%;
+			background-color: yellow;
+			color: red;
+			font-size: 60px;
+		}
+}

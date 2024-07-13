@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main{
+			width: 100%;
+			height: 100vh;
+			background: skyblue;
+			animation: bodyColor 10s infinite linear;
+		}
+		.sun{
+			width: 250px;
+			height: 250px;
+			border-radius: 50%;
+			background: yellow;
+			position: fixed;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			animation: sunset 10s infinite;
+		}
+
+		@keyframes sunset{
+			50%{
+				top: 120%;
+				background: red;
+			}
+			100%{
+				top: 0;
+				background: yellow;
+			}
+		}
+
+		@keyframes bodyColor{
+			50%{
+				background: black;
+			}
+			100%{
+				background: skyblue;
+			}
+		}
+
+		.truck{
+			position: fixed;
+			bottom: 0;
+			left: -20%;
+			animation: truckRun 10s infinite linear;
+		}
+		.wheels{
+			padding: 0 10px;
+			display: flex;
+			justify-content: space-between;
+			transform: translateY(-50%);
+		}
+
+		@keyframes truckRun{
+			from{
+				left: -20%;
+			}
+			to{
+				left: 120%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="sun"></div>
+		<div class="truck">
+			<div class="truckBody">
+				<img src="https://packshifts.in/images/truck-1.png">
+			</div>
+			<div class="wheels">
+				<span>
+					<img src="https://packshifts.in/images/wheel-2.png">
+				</span>
+				<span>
+					<img src="https://packshifts.in/images/wheel-2.png">
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

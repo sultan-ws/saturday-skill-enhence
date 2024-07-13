@@ -1,0 +1,21 @@
+@media only screen and (max-width : 992px){
+	.logo{
+		width: 35vw;
+	}
+	.card_inner_02 div img{
+		left: 50%;
+		animation: unset;
+	}
+	.card_serve{
+	width: 48%;
+}
+}
+
+@media only screen and (max-width : 567px){
+	.logo{
+		width: 50vw;
+	}
+	.card_serve{
+	width: 98%;
+}
+}

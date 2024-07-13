@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="password" name="" id="input1"> <button id="btn">show</button><br>
+	<!-- <input type="text" name="" id="input2" readonly> -->
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+	$('#btn').click(function(){
+		let inner = $('#btn').html();
+
+		if(inner == 'show'){
+			$('#input1').attr('type','text');
+			$('#btn').html('hide');
+		}else{
+			$('#input1').attr('type','password');
+			$('#btn').html('show');
+		}
+	});
+</script>
+</html>

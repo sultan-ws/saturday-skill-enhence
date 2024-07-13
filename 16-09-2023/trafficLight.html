@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.theDiv{
+			width: 250px;
+			border: 4px double black;
+			margin: auto;
+		}
+		.inner{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			margin:10px auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: black;
+			font-size: 80px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="theDiv">
+		<div class="inner">00</div>
+		<div class="inner">00</div>
+		<div class="inner">00</div>
+	</div>
+</body>
+<script type="text/javascript">
+	let inners = document.querySelectorAll('.inner');
+	const colors = ['red','yellow','green'];
+	let i = 10;
+	let j = 0;
+
+	function traffic(){
+		inners[j].innerText = i;
+		inners[j].style.backgroundColor = colors[j];
+		inners[j].style.color = 'white';
+		i--;
+
+		if(i < 1){
+			j++;
+			i = 10;
+			inners.forEach((item)=>{
+				item.style.backgroundColor = 'black';
+				item.style.color = 'black';
+			});
+
+		};
+
+		if(j > 2){
+			j = 0;
+			i = 10;
+		}
+	}
+
+	setInterval(traffic,1000);
+</script>
+</html>

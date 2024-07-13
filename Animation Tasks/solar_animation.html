@@ -1,0 +1,237 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #080e24;
+        }
+       
+        ul.solarsystem{
+            list-style: none;
+            height: 700px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.9s ;
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ul li span{
+            
+            text-indent: -9999;
+        }
+        ul.solarsystem li{
+            position: absolute;
+            display: block;
+            animation: orbit infinite linear;
+        }
+        ul.solarsystem li span{
+            position: absolute;
+            display: block;
+        }
+       
+        ul.solarsystem li.sun{
+            width: 50px;
+            height: 50px;
+            background: #fc3;
+            box-shadow: 0 0 50px #c90;
+            border-radius: 50%;
+         
+            transition: all 0.5s ;
+        }
+        ul.solarsystem li.mercury{
+            width: 100px;
+            height: 100px;
+         
+            border-radius: 50%;
+            border: 2px solid #394057
+            ;
+            animation-duration: 5s;
+        }
+        li.mercury span{
+            width: 10px;
+            height: 10px;
+            background-color: #b6bac5;
+            border-radius: 50%;
+            top: 10px;
+            left: 8px;
+        }
+        ul.solarsystem li.venus{
+            width: 160px;
+            height: 160px;
+            border: 2px solid #394057;
+            border-radius: 50%;
+        
+            animation-duration: 8s;
+
+        }
+        li.venus span{
+            width: 10px;
+            height: 10px;
+            background-color: #bf8639;
+            border-radius: 50%;
+            top: 118;
+            left: 6px;
+            
+        }
+        ul.solarsystem li.earth{
+            width: 220px;
+            height: 220px;
+            border: 2px solid #394057;
+            border-radius: 50%;
+    
+            animation-duration: 12s;
+
+        }
+        li.earth span{
+            width: 15px;
+            height: 15px;
+            background-color: rgb(0, 132, 255);
+            border-radius: 50%;
+            top:56px;
+            left: 2px;  
+           animation: moon 2s infinite linear;
+            
+        }
+        ul.solarsystem  li.earth span.moon{
+            width: 4px;
+            height: 4px;
+           background-color: #ccc;
+           top: 20px;
+           left: 12px;
+            
+
+        }
+        ul.solarsystem li.mars{
+            width: 280px;
+            height: 280px;
+            border: 2px solid #394057;
+            border-radius: 50%;
+        
+            animation-duration:20s;
+
+        }
+        li.mars span{
+            width: 10px;
+            height: 10px;
+            background-color: #aa4200;
+            border-radius: 50%;
+            top: 75px;
+            left: 7px;
+            
+        }
+        ul.solarsystem li.asteroids{
+            width: 340px;
+            height: 340px;
+            background: url(http://neography.com/experiment/circles/solarsystem/asteroids_meteorids.png);
+           
+            border-radius: 50%;
+        
+            animation-duration:50s;
+
+        }
+        ul.solarsystem li.jupiter{
+            width: 340px;
+            height: 340px;
+            border: 2px solid #394057;
+            border-radius: 50%;
+        
+            animation-duration:30s;
+
+        }
+        li.jupiter span{
+            width: 10px;
+            height: 10px;
+            background-color: #e0ae6f;
+            border-radius: 50%;
+            top: 67px;
+            left: 24px;
+            
+        }
+        ul.solarsystem li.saturn{
+            width: 400px;
+            height: 400px;
+            border: 2px solid #394057;
+            border-radius: 50%;
+        
+            animation-duration:60s;
+
+        }
+        li.saturn span{
+            width: 10px;
+            height: 10px;
+            background-color: #dfd3a9;
+            border-radius: 50%;
+            top: 89px;
+            left: 24px;
+            
+        }
+        li.saturn span.ring{
+            width: 12px;
+            height: 12px;
+            border-radius: 8px;
+            border: 2px solid #5a4e34;
+            left: 3px;
+            background: none;
+            transform: skewY(50deg);
+            left:-3px;
+            top: -3px;
+        }
+        @keyframes orbit {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes moon {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul class="solarsystem">
+            <li class="sun">
+                <span>sun</span>
+            </li>
+            <li class="mercury">
+                <span>mercury</span>
+            </li>
+            <li class="venus">
+                <span>venus</span>
+            </li>
+            <li class="earth">
+                <span class="">earth <span class="moon">Moon</span></span>
+            </li>
+            <li class="mars">
+                <span>Mars</span>
+            </li>
+            <li class="asteroids">
+                <span>asteroids</span>
+            </li>
+            <li class="jupiter">
+                <span>jupiter</span>
+            </li>
+            <li class="saturn">
+                <span>saturn
+                    <span class="ring">Ring</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

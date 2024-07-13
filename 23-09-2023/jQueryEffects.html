@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		button{
+			padding: 20px 30px;
+			background: black;
+			color: white;
+			border-radius: 6px;
+			font-weight:bold ;
+			font-size: 22px;
+			cursor: pointer;
+		}
+		div{
+			border: 5px solid grey;
+			background: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<button id="hideBtn">Hide</button>
+	<button id="showBtn">Show</button>
+	<button id="toggleBtn">Toggle</button>
+	<div id="theDiv">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+	$('#hideBtn').click(function(){
+		//$('#theDiv').hide(500);
+		//$('#theDiv').slideUp(700);
+		$('#theDiv').fadeOut(500);
+	});
+
+	$('#showBtn').click(function(){
+		//$('#theDiv').show(400);
+		//$('#theDiv').slideDown(700);
+
+		$('#theDiv').fadeIn(400);
+	});
+	$('#toggleBtn').click(function(){
+		//$('#theDiv').toggle(400);
+		//$('#theDiv').slideToggle(400);
+		$('#theDiv').fadeToggle(500);
+	})
+
+</script>
+</html>

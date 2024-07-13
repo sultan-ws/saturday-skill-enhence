@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.watch{
+			width: 800px;
+			background: cyan;
+			font-size: 100px;
+			text-align:center;
+			margin: auto;
+			padding: 20px;
+		}
+		button{
+			background: black;
+			color: white;
+			padding: 10px 20px;
+			font-size: 50px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="watch">
+		<div>
+			<span>00</span> :
+			<span>00</span> :
+			<span>00</span> :
+			<span>000</span>
+		</div>
+		<div>
+			<button onclick="startWatch()">Start</button>
+			<button onclick="resetWatch()">Reset</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	let spans = document.querySelectorAll('.watch div span');
+	let i = 1;
+	let j = 1;
+	let k = 1;
+	let p = 1;
+	let interval;
+
+	const stopWatchStart = ()=>{
+
+
+		if(i > 99){
+			j = (j < 10) ? '0' + j : j;
+			spans[2].innerHTML = j;
+			i = 0;
+			j++;
+		};
+
+		if(j > 59){
+			k = (k < 10) ? '0' + k : k;
+			spans[1].innerHTML = k;
+			j = 0;
+			k++;
+		};
+
+		if(k > 59){
+			p = (p < 10) ? '0' + p : p;
+			spans[0].innerHTML = p;
+			k = 0;
+			p++;
+		}
+
+		i = (i >= 100) ?  i : ((i < 10) ? '00' + i : '0' + i);
+		spans[3].innerHTML = i;
+		i++;
+	};
+
+
+	const startWatch = ()=>{
+		interval = setInterval(stopWatchStart,10);
+	};
+
+	const resetWatch = ()=>{
+		clearInterval(interval);
+		i = 1;
+		j = 1;
+		k = 1;
+		p = 1;
+
+		spans.forEach((item)=>{
+			item.innerHTML = '00';
+		})
+	};
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#snoozBtn{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<input type="time" name="" id="timeInput"><br>
+<button onclick="setAlarm()">set alarm</button>
+<button onclick="resetAlarm()">reset alarm</button>
+<button onclick="snoozAlarm()" id="snoozBtn">snooz</button>
+</body>
+<script type="text/javascript">
+	let audio = new Audio('sample-6s.mp3');
+	let snoozBtn = document.getElementById('snoozBtn');
+	let timeout;
+
+	const setAlarm = ()=>{
+		let timeInput = document.getElementById('timeInput').value;
+		let currentTime = new Date();
+		let userTime = new Date(currentTime.toDateString() + ' ' + timeInput);
+
+		let timeDifference = userTime - currentTime;
+
+		timeout = setTimeout(playAlarm,timeDifference);
+	}
+
+	const playAlarm = ()=>{
+		audio.loop = true;
+		audio.play();
+		snoozBtn.style.display = 'inline-block';
+	}
+
+	const resetAlarm = ()=>{
+		clearTimeout(timeout);
+		document.getElementById('timeInput').value = '';
+	}
+
+	const snoozAlarm = ()=>{
+		audio.pause();
+		audio.currentTime = 0;
+		clearTimeout(timeout);
+		let snooz = 5000;
+		timeout = setTimeout(playAlarm,snooz);
+
+	}
+</script>
+
+</html>

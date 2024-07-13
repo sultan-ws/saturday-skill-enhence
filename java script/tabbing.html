@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main{
+			width: 1000px;
+			margin: auto;
+			height: 500px;
+			border: 4px double black;
+		}
+		.tabInner{
+			height: 100px;
+			background: grey;
+			display: flex;
+		}
+		.tabInner div{
+			font-size: 25px;
+			color: white;
+			font-weight: bold;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 20px;
+			background: black;
+			border: 2px solid grey;
+			cursor: pointer;
+		}
+		.tabContent{
+			display: none;
+		}
+		.tabBody{
+			font-size: 60px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="tabInner">
+			<div>Tab 1</div>
+			<div>Tab 2</div>
+			<div>Tab 3</div>
+			<div>Tab 4</div>
+		</div>
+		<div class="tabBody">
+			this is tab 1 content
+		</div>
+		<div class="tabContent">
+			<div id="tab1">
+				this is tab 1 content
+			</div>
+			<div id="tab2">
+				this is tab 2 content
+			</div>
+			<div id="tab3">
+				this is tab 3 content
+			</div>
+			<div id="tab4">
+				this is tab 4 content
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	let tabs = document.querySelectorAll('.tabInner div');
+	let tabContent = document.querySelectorAll('.tabContent div');
+	let tabBody = document.querySelector('.tabBody');
+
+	tabs.forEach((item,i)=>{
+		item.addEventListener('click',(el)=>{
+			//console.log(tabContent[i].innerHTML);
+			tabBody.innerHTML = tabContent[i].innerHTML;
+		});
+		
+	});
+</script>
+</html>

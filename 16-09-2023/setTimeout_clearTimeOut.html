@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<button onclick="clickFunction()">click me</button>
+<button onclick="stopAlert()">stop alert</button>
+</body>
+<script type="text/javascript">
+	let timeout;
+
+	const timeFunction = ()=>{
+		alert('function run');
+	}
+
+	const clickFunction = ()=>{
+		timeout = setTimeout(timeFunction,5000);
+	}
+
+	const stopAlert = ()=>{
+		clearTimeout(timeout);
+	}
+</script>
+</html>
+
+<!-- setTimeout
+clearTimeout
+setInterval
+clearIntrval -->

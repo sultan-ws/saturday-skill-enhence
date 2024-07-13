@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<button onclick="intervalSet()">start time</button>
+<button onclick="stopInterval()">stop time</button>
+</body>
+<script type="text/javascript">
+	let i = 1;
+	let interval;
+
+	const intervalFunction = ()=>{
+		console.log(i);
+		i++;
+	}
+
+	const intervalSet = ()=>{
+		interval = setInterval(intervalFunction,1000);
+	}
+	
+
+	const stopInterval = ()=>{
+		clearInterval(interval);
+	}
+</script>
+</html>

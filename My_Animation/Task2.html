@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> task 2 </title>
+	<style type="text/css">
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.box {
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			
+			margin: 150px auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 50px;
+			animation-name: change_bg;
+			animation-duration: 2s;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes change_bg {
+			0% {
+				background-color: red;
+			}
+			100% {
+				background-color: blue;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		Gaurav 
+	</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.popUpOverlay{
+			width: 100%;
+			height: 100vh;
+			background: #0000008c;
+			position: fixed;
+			top: 0;
+			left: 0;
+			transform: scale(0);
+		}
+		.modelBody{
+			width: 700px;
+			height: 600px;
+			background: skyblue;
+			position: fixed;
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) scale(0);
+			transition: 0.8s;
+		}
+		.modelBody span{
+			font-size: 50px;
+			font-weight: bold;
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding-right: 20px;
+			cursor: pointer;
+		}
+		.mainImg{
+			height:500px ;
+		}
+		.mainImg img{
+			width: 100%;
+			height: 100%;
+		}
+		.imgs{
+			height: 100px;
+			display: flex;
+			justify-content: space-between;
+			border: 2px solid black;
+			box-sizing: border-box;
+		}
+		.imgs img{
+			width: 16%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="openPopUp()">click me</button>
+	<div class="popUpOverlay"></div>
+	<div class="modelBody">
+		<span>&times;</span>
+		<div class="mainImg">
+			<img src="images/butterflies-1127666_640.jpg">
+		</div>
+		<div class="imgs">
+			<img onclick="srcChange(this)" src="images/flowers-276014_640.jpg">
+			<img onclick="srcChange(this)" src="images/istockphoto-1337232523-612x612.webp">
+			<img onclick="srcChange(this)" src="images/istockphoto-1358918776-612x612.webp">
+			<img onclick="srcChange(this)" src="images/istockphoto-1402485839-612x612.webp">
+			<img onclick="srcChange(this)" src="images/road-1072821_640.jpg">
+			<img onclick="srcChange(this)" src="images/road-1072823_640.jpg">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	let overLay = document.querySelector('.popUpOverlay');
+	let modelBody = document.querySelector('.modelBody');
+	let closeBtn = document.querySelector('.modelBody span');
+	let mainImg = document.querySelector('.mainImg img');
+	
+
+
+	function srcChange(theImg){
+		mainImg.src = theImg.src;
+	}
+
+	function openPopUp(){
+		let lastOpenedDate = localStorage.getItem('modelDate') ?? '01-01-2001';
+		let currentDate = new Date();
+		let timeData = currentDate.toDateString();
+		//console.log(timeDate);
+		lastOpenedDate = new Date(lastOpenedDate + ' ' + '23:59:59:999');
+
+		let difference = lastOpenedDate - currentDate;
+		//console.log(difference);
+
+
+		if(difference < 0){
+			overLay.style.transform = 'scale(1)';
+			modelBody.style.transform = 'translate(-50%,-50%) scale(1)';
+
+
+			localStorage.setItem('modelDate',timeData);
+		}else{
+			alert('Please try next day...')
+		}
+	}
+
+	closeBtn.addEventListener('click',()=>{
+		overLay.style.transform = 'scale(0)';
+		modelBody.style.transform = 'translate(-50%,-50%) scale(0)';
+	});
+	
+	</script>
+</html>

@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background:#7f1818 ;
+}
+.animate{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.animate li{
+position: absolute;
+display: block;
+width: 100px;
+height: 100px;
+bottom: -150px;
+background-color: rgba(255, 255, 255, 0.2);
+/* border-radius: 50%; */
+animation: bubbles 20s infinite linear;
+
+}
+.animate li:nth-child(1){
+    left: 80%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 0s;
+}
+.animate li:nth-child(2){
+    left: 65%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0.5s;
+    /* animation-duration: 15s; */
+}
+.animate li:nth-child(3){
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 1s;
+
+}
+.animate li:nth-child(4){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0.4s;
+    animation-duration: 18s;
+}
+.animate li:nth-child(5){
+    left: 25%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 1.2s;
+}
+.animate li:nth-child(6){
+    left: 10%;
+    width: 85px;
+    height: 85px;
+    animation-delay: 0.8s;
+    animation-duration: 13s;
+}
+@keyframes bubbles {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg); 
+        opacity: 0;
+    }    
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul class="animate">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+    </div>
+</body>
+</html>

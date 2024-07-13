@@ -1,0 +1,55 @@
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+	.navbar_middle {
+		width: 100%;
+	}
+
+	.logo {
+		margin-left: 10px;
+	}
+
+	.logo img {
+		width: 150px;
+	}
+
+	.contact {
+		font-size: 18px;
+		margin-right: 10px;
+	}
+
+	.banner_middle {
+		display: block;
+	}
+
+	.banner_c1 {
+		width: 100%;
+	}
+
+	.banner_c2 {
+		width: 100%;
+	}
+
+	.c1_heading1 {
+		padding-top: 40px;
+		text-align: center;
+		font-size: 25px;
+	}
+
+	.c1_heading2 {
+		padding-top: 15px;
+		text-align: center;
+		font-size: 18px;
+	}
+
+	.c1_heading3 {
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.c1_images {
+		text-align: center;
+	}
+
+	.packaging_video_section {
+		flex-direction: column;
+	}
+}

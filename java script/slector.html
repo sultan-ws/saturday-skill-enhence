@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 300px;
+			height: 300px;
+			background: red;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="main" id="main1" onclick="changeDiv()"></div>
+</body>
+<script type="text/javascript">
+	let myDiv = document.querySelector('#main1');
+	let color = ['yellow','blue','orange','green','pink','grey','black'];
+	
+	let i = 0;
+	let j = 50;
+	function changeDiv(){
+		myDiv.style.backgroundColor = color[i];
+		myDiv.style.transform = `translate(${j}px)`;
+		i++;
+		j += 50;
+
+		if (i >= color.length) {
+			i = 0;
+		}
+	}
+</script>
+</html>
+<!-- DOM selector
+	document.getElementById();
+	document.getElementsByClassName()
+	document.getElementsByTagName()
+	document.querySelector('css selector');
+	document.querySelectorAll('css selector'); -->

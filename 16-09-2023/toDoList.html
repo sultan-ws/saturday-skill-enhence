@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.totolist{
+			width: 500px;
+			box-shadow: 0px 0px 10px 1px black;
+			margin: auto;
+			padding: 20px;
+		}
+		.totolist>input{
+			width: 70%;
+			padding: 10px;
+		}
+		.totolist>button{
+			padding: 10px 15px;
+			background: green;
+			border: none;
+			font-weight: bold;
+			color: white;
+			margin-left: 10px;
+		}
+		.totolist ul li{
+			display: flex;
+			justify-content: space-between;
+			margin: 10px 0;
+			padding: 8px 0;
+			border-bottom: 1px solid grey;
+		}
+		.totolist ul li button{
+			border: none;
+			background: red;
+			color: white;
+			font-weight: bold;
+			padding: 0 10px;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="totolist">
+		<input type="text" name="" id="userInput">
+		<button onclick="taskFunction()">Add Task</button>
+		<ul id="taskList">
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	let userInput = document.getElementById('userInput');
+	let taskList = document.getElementById('taskList');
+
+	const taskFunction = ()=>{
+		let userValue = userInput.value;
+		
+		if( userValue != ''){
+			let newLi = document.createElement('li');
+			let checkBox = document.createElement('input');
+			let dltBtn = document.createElement('button');
+			dltBtn.innerText = 'Delete';
+			dltBtn.onclick = function(){
+				taskList.removeChild(newLi);
+			}
+
+			checkBox.type = 'checkbox';
+
+			newLi.appendChild(checkBox);
+
+			newLi.innerHTML += userValue;
+
+			newLi.appendChild(dltBtn);
+
+			taskList.appendChild(newLi);
+			userInput.value = '';
+		}
+		else{
+			alert('please fill the input...');
+		}
+	}
+</script>
+</html>
+
+<!-- document.createElement();
+element.appendChild();
+removeChild -->

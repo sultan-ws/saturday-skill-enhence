@@ -1,0 +1,60 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.main {
+	width: 1000px;
+	height: 600px;
+	border: 0.1px solid red;
+	margin: 50px auto;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+	background: url('../images/3.jpg');
+	background-size: cover;
+	border-radius: 10px;
+	transition: 2s;
+	animation-name: m_box;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-iteration-count: 1;
+	animation-direction: ;
+	animation-timing-function: linear;
+	animation-fill-mode: backwards;
+}
+
+/*@keyframes m_box {
+	0% {
+		transform: translate(0px,0px);
+	}
+	10% {
+		transform: translate(800px,0px);
+	}
+	80% {
+		transform: translate(800px,400px);
+	}
+	90% {
+		transform: translate(0px,400px);
+	}
+	100% {
+		transform: translate(0px,0px);
+	}
+}*/
+
+@keyframes m_box {
+	0% {
+		transform: translate(0px,0px);
+	}
+	33% {
+		transform: translate(800px,0px);
+	}
+	66% {
+		transform: translate(800px,400px);
+	}
+	100% {
+		transform: translate(0px,400px);
+	}
+}
