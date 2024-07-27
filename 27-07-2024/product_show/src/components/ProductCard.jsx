@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const ProductCard = ({productData}) => {
 
-    console.log(productData);
+const ProductCard = ({productData, modalFn}) => {
+
   return (
     <div className='border rounded bg-[olive]'>
         <div>
-            <img src={productData.thumbnail}/>
+            <img 
+            className='cursor-pointer' 
+            src={productData.thumbnail}
+            onClick={modalFn}/>
         </div>
         <div>
             <h3>{productData.title}</h3>
