@@ -9,6 +9,7 @@ import Gallery from './components/pages/Gallery';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Login from './components/pages/Login';
+import GlobalData from './components/context/GlobalData';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -28,7 +29,9 @@ const routes = createBrowserRouter(
 
 root.render(
   <React.StrictMode>
+    <GlobalData>
     <RouterProvider router={routes} />
+    </GlobalData>
   </React.StrictMode>
 );
 

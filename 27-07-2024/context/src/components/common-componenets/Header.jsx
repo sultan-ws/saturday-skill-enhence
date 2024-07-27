@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+    const [data, setData] = useState('hello');
   return (
     <div style={{
         padding:'30px',
@@ -12,6 +13,8 @@ const Header = () => {
         <Link to='/about'>About us</Link>
         <Link to='/contact'>Contact us</Link>
         <Link to='/login'>Login</Link>
+
+        <div>{data}</div>
     </div>
   )
 }
