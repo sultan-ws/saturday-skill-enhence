@@ -13,6 +13,13 @@ const GlobalData = ({ children }) => {
     const [categories, setCategories] = useState([]);
     const [activeCat, setCat] = useState('all');
     const [totalPages, setPages] = useState(1);
+    const [minPrice, setMinPrice] = useState(null);
+    const [maxPrice, setMaxPrice] = useState(null);
+
+    //eg. data according price
+    // const newArr = [...dataToShow]
+    //const newData = newArr.filter((prodt)=> prodt <= userMaxPrice)
+    //setDataToShow(newdData)
 
     const getdata = useCallback(() => {
         let url = 'https://dummyjson.com/products?limit=194';
@@ -24,6 +31,25 @@ const GlobalData = ({ children }) => {
 
                 setAllProducts(res);
                 setPages(Math.ceil(res.length / 12));
+
+                let minprice = Infinity;
+
+                res.forEach((pro)=>{
+                    if(pro.price < minprice){
+                        minprice = pro.price
+                    }
+                })
+
+                setMinPrice(minprice);
+
+                let maxprice = -Infinity;
+                res.forEach((pro)=>{
+                    if(pro.price > maxprice){
+                        maxprice = pro.price
+                    }
+                })
+
+                setMaxPrice(maxprice);
             })
     });
 
@@ -50,7 +76,7 @@ const GlobalData = ({ children }) => {
     // }, [dataToShow]);
 
     return (
-        <myContext.Provider value={{totalPages, setCat, activeCat, categories, setCart, cart, dataToShow, currentPage, setCurrentPage }}>
+        <myContext.Provider value={{minPrice, maxPrice,totalPages, setCat, activeCat, categories, setCart, cart, dataToShow, currentPage, setCurrentPage }}>
             {children}
         </myContext.Provider>
     )

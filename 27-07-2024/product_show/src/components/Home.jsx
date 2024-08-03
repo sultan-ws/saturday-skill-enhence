@@ -10,6 +10,7 @@ import 'react-responsive-pagination/themes/classic.css';
 const Home = () => {
     const [open, setOpen] = useState(false);
     const [currentProduct, setCurrentProduct] = useState(0);
+    const [userMaxPrice, setUserPrice] = useState(100);
     
 
     const { dataToShow,
@@ -18,7 +19,13 @@ const Home = () => {
         setCat,
         activeCat,
         totalPages,
+        minPrice,
+        maxPrice,
         categories } = useContext(myContext);
+
+        // useEffect(()=>{
+        //     setUserPrice(maxPrice);
+        // },[]);
 
     // const [currentPage, setCurrentPage] = useState(8);
 
@@ -33,7 +40,7 @@ const Home = () => {
             <Header />
             <div className='bg-[whitesmoke] grid grid-cols-[1fr_3fr]'>
                 <div className='bg-[olive]'>
-                    <h2>Filter</h2>
+                    <h2>Category-Filter</h2>
                     <ul>
                         <li 
                         onClick={()=>{setCat('all')}}
@@ -52,6 +59,14 @@ const Home = () => {
                             ))
                         }
                     </ul>
+
+                    <h2>Max-price</h2>
+                    <input 
+                    onChange={(e)=>{setUserPrice(e.target.value)}}
+                    value={userMaxPrice} type='range' min={minPrice} max={maxPrice} />
+                    <div>
+                        <span>Max: {userMaxPrice}</span>
+                    </div>
                 </div>
                 <div className='bg-[ghostwhite] p-[12px]'>
                     <div className='grid grid-cols-[repeat(4,1fr)] gap-3'>
