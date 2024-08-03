@@ -9,15 +9,16 @@ const ProductCard = ({productData, modalFn}) => {
   const handleAddToCart = (data)=>{
    const productIndex = cart.findIndex((product)=> product.id === data.id);
   
+   console.log(productIndex);
    if(productIndex === -1)
     {
     setCart([...cart, {...data, quantity:1}])
    }
    else
    {
-
-    cart[productIndex].quantity = cart[productIndex].quantity + 1;
-    setCart(cart);
+    const updatedCart = [...cart];
+    updatedCart[productIndex].quantity += 1;
+    setCart(updatedCart);
    }
 
   };

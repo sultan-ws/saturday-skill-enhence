@@ -28,7 +28,8 @@ const GlobalData = ({ children }) => {
         const start = (currentPage -1 ) * 12;
         const data = allProducts.slice(start, start + 12);
         setDataToShow(data);
-    },[allProducts, currentPage])
+    },[allProducts, currentPage]);
+
 
 
     return (
