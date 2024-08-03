@@ -9,6 +9,7 @@ const GlobalData = ({ children }) => {
     const [allProducts, setAllProducts] = useState([]);
     const [dataToShow, setDataToShow] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [cart, setCart] = useState([]);
 
     const getdata = useCallback(() => {
         axios.get('https://dummyjson.com/products?limit=194')
@@ -31,7 +32,7 @@ const GlobalData = ({ children }) => {
 
 
     return (
-        <myContext.Provider value={{dataToShow, currentPage, setCurrentPage}}>
+        <myContext.Provider value={{setCart, cart, dataToShow, currentPage, setCurrentPage}}>
             {children}
         </myContext.Provider>
     )
