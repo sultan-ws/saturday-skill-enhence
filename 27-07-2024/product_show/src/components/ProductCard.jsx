@@ -6,6 +6,22 @@ const ProductCard = ({productData, modalFn}) => {
 
   const {setCart, cart} = useContext(myContext);
 
+  const handleAddToCart = (data)=>{
+   const productIndex = cart.findIndex((product)=> product.id === data.id);
+  
+   if(productIndex === -1)
+    {
+    setCart([...cart, {...data, quantity:1}])
+   }
+   else
+   {
+
+    cart[productIndex].quantity = cart[productIndex].quantity + 1;
+    setCart(cart);
+   }
+
+  };
+
   return (
     <div className='border rounded bg-[olive]'>
         <div>
@@ -21,7 +37,7 @@ const ProductCard = ({productData, modalFn}) => {
               }}>{productData.title}</h3>
 
               <button
-              onClick={()=>{setCart([...cart, productData])}}
+              onClick={()=>{handleAddToCart(productData)}}
                className='
               my-3 bg-red-500 rounded-md p-[5px] w-full text-white
               font-[22px]
