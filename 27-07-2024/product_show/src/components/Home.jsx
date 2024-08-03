@@ -10,17 +10,21 @@ import 'react-responsive-pagination/themes/classic.css';
 const Home = () => {
     const [open, setOpen] = useState(false);
     const [currentProduct, setCurrentProduct] = useState(0);
-    const [totalPages, setPages] = useState(1);
+    
 
-    const { dataToShow, currentPage, setCurrentPage } = useContext(myContext);
+    const { dataToShow,
+        currentPage, 
+        setCurrentPage,
+        setCat,
+        activeCat,
+        totalPages,
+        categories } = useContext(myContext);
 
     // const [currentPage, setCurrentPage] = useState(8);
 
     const onCloseModal = () => setOpen(false);
 
-    useEffect(()=>{
-        setPages(Math.ceil(194/12));
-    },[]);
+   
     return (
         <>
             <Modal open={open} onClose={onCloseModal} center>
@@ -30,6 +34,24 @@ const Home = () => {
             <div className='bg-[whitesmoke] grid grid-cols-[1fr_3fr]'>
                 <div className='bg-[olive]'>
                     <h2>Filter</h2>
+                    <ul>
+                        <li 
+                        onClick={()=>{setCat('all')}}
+                        className={`${activeCat == 'all' ? 'bg-[white]' : ''}`}>
+                            <span>All</span>
+                        </li>
+                        {
+                            categories.map((category)=>(
+                                <li key={category.id}
+                                onClick={()=>{setCat(category.slug)}}
+                                className={`${activeCat == category.slug ? 'bg-[white]' : '' } cursor-pointer`}
+                                >
+
+                                    <span>{category.name}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
                 <div className='bg-[ghostwhite] p-[12px]'>
                     <div className='grid grid-cols-[repeat(4,1fr)] gap-3'>
@@ -53,3 +75,6 @@ const Home = () => {
 }
 
 export default Home
+
+
+// git pull -u origin main

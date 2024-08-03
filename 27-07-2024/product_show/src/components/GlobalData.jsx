@@ -10,30 +10,47 @@ const GlobalData = ({ children }) => {
     const [dataToShow, setDataToShow] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [cart, setCart] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [activeCat, setCat] = useState('all');
+    const [totalPages, setPages] = useState(1);
 
     const getdata = useCallback(() => {
-        axios.get('https://dummyjson.com/products?limit=194')
+        let url = 'https://dummyjson.com/products?limit=194';
+        if(activeCat !== 'all') url = `https://dummyjson.com/products/category/${activeCat}`
+        axios.get(url)
             .then((response) => {
                 // console.log(response.data);
+                let res = response.data.products
 
-                setAllProducts(response.data.products)
+                setAllProducts(res);
+                setPages(Math.ceil(res.length / 12));
             })
     });
 
-   
-    useEffect(() => { getdata(); }, []);
 
-    useEffect(()=>{
+    useEffect(() => { getdata(); }, [activeCat]);
 
-        const start = (currentPage -1 ) * 12;
+    useEffect(() => {
+
+        const start = (currentPage - 1) * 12;
         const data = allProducts.slice(start, start + 12);
         setDataToShow(data);
-    },[allProducts, currentPage]);
+    }, [allProducts, currentPage]);
 
+    useEffect(() => {
+        fetch('https://dummyjson.com/products/categories')
+            .then(res => res.json())
+            .then((cats)=>{
+                setCategories(cats);
+            });
+    }, []);
 
+    // useEffect(() => {
+    //     setPages(Math.ceil(dataToShow.length / 12));
+    // }, [dataToShow]);
 
     return (
-        <myContext.Provider value={{setCart, cart, dataToShow, currentPage, setCurrentPage}}>
+        <myContext.Provider value={{totalPages, setCat, activeCat, categories, setCart, cart, dataToShow, currentPage, setCurrentPage }}>
             {children}
         </myContext.Provider>
     )
